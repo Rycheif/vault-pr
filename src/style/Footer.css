@@ -1,6 +1,4 @@
 .footer {
-  position: fixed;
-  bottom: 0;
   background-color: #242424;
   color: #efefef;
   height: 60px;
@@ -8,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 3rem;
 }
 
 .footer p {

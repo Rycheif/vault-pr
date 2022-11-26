@@ -1,14 +1,23 @@
-import React from 'react'
+import React, {Children} from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Root from "./routes/root";
+import Index from "./routes";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root/>
+    element: <Root/>,
+    children: [{
+      children: [
+        {
+          index: true,
+          element: <Index/>
+        },
+      ]
+    }]
   }
 ]);
 

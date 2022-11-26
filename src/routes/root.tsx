@@ -4,10 +4,12 @@ import {Outlet} from "react-router-dom";
 import Footer from "../component/Footer";
 
 const Root: React.FC = () => (
-  <div className="wrapper">
+  <div className="vh-100 overflow-auto" style={{backgroundColor: "#242424"}}>
     <Header/>
-    <Outlet/>
-    <Footer />
+    <main className="d-flex justify-content-center">
+      <Outlet/>
+    </main>
+    <Footer/>
   </div>
 );
 
