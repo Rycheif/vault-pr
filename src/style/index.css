@@ -12,9 +12,10 @@
 }
 
 .grid-item {
+  flex-basis: 350px;
   background-color: #ef4523;
   padding: 0.25rem;
-  height: 8rem;
+  /*height: 8rem;*/
   border-radius: 10px;
 }
 
@@ -22,10 +23,4 @@
   padding: 1rem;
   height: 100%;
   border-radius: 10px;
-}
-
-@media (max-width: 720px) {
-  .grid-item {
-    width: 50%;
-  }
 }
