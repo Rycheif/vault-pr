@@ -7,6 +7,16 @@
   font-family: "Fira Sans", sans-serif;
 }
 
+html, body {
+  color: #f8f9fa !important;
+}
+
 a:link, a:visited {
   color: #db454e;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }

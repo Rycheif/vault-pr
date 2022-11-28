@@ -1,0 +1,6 @@
+.list-container {
+  padding-top: 150px;
+  margin: 4rem;
+  grid-template-columns: auto auto auto;
+  place-content: space-evenly;
+}

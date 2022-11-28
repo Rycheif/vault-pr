@@ -8,8 +8,8 @@ const Index: React.FC = () => (
   <div className="hero d-flex flex-column align-items-center">
     <section className="d-flex flex-row flex-wrap">
       <div className="d-flex flex-column justify-content-center" style={{flex: 1}}>
-        <h1 className="text-light fw-bold display-1 mb-4">Vault</h1>
-        <p className="text-light" style={{fontSize: "1.5rem"}}>Movie database created and maintained by the
+        <h1 className="fw-bold display-1 mb-4">Vault</h1>
+        <p style={{fontSize: "1.5rem"}}>Movie database created and maintained by the
           community</p>
       </div>
       <div className="hero-image d-flex my-5" style={{flex: 1}}>
