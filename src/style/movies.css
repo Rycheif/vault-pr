@@ -1,6 +1,22 @@
 .list-container {
   padding-top: 150px;
   margin: 4rem;
-  grid-template-columns: auto auto auto;
-  place-content: space-evenly;
+}
+
+.movie-card {
+  border: 2px solid #db454e;
+  width: min(100%, 250px);
+}
+
+.movie-card:hover {
+  color: white;
+}
+
+.movie-card figcaption {
+  overflow-wrap: break-word;
+}
+
+.movie-card:hover {
+  background-color: #db454e;
+  transition: 0.3s;
 }

@@ -15,6 +15,10 @@ a:link, a:visited {
   color: #db454e;
 }
 
+a:hover {
+  color: white;
+}
+
 img {
   display: block;
   max-width: 100%;
