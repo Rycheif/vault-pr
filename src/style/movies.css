@@ -4,12 +4,12 @@
 }
 
 .movie-card {
-  border: 2px solid #db454e;
+  outline: 4px solid #db454e;
   width: min(100%, 250px);
 }
 
 .movie-card:hover {
-  color: white;
+  color: #fff;
 }
 
 .movie-card figcaption {
@@ -19,4 +19,33 @@
 .movie-card:hover {
   background-color: #db454e;
   transition: 0.3s;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  cursor: pointer;
+}
+
+.pagination a {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #db454e;
+  color: #fff;
+  text-decoration: none;
+}
+
+.pagination-link {
+  font-weight: bold;
+}
+
+.pagination-link-active a {
+  color: #fff;
+  background: #db454e;
+}
+
+.pagination-link-disabled a {
+  color: #fff;
+  border: 1px solid #fff;
 }
