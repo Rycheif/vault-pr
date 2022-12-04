@@ -12,8 +12,8 @@ const Index: React.FC = () => (
         <p style={{fontSize: "1.5rem"}}>Movie database created and maintained by the
           community</p>
       </div>
-      <div className="hero-image d-flex my-5" style={{flex: 1}}>
-        <img src="src/assets/vectorpaint.png" alt="Vault"/>
+      <div className="hero-image d-flex m-5">
+        <img src="src/assets/vectorpaint.png" alt="Vault" width="499" height="144"/>
       </div>
     </section>
     <section className="mt-5 grid-wrapper text-light">

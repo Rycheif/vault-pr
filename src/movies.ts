@@ -1,3 +1,5 @@
+import movie from "./routes/movie";
+
 export interface Movie {
   title: string,
   image: string,
@@ -39,6 +41,6 @@ const moviesList = [
   }
 ];
 
-export const getMovies = (id?: string): Movie[] => {
-  return typeof id !== "undefined" ? moviesList.filter(movie => movie.id === id) : moviesList;
-}
+export const getMovies = (): Movie[] => moviesList;
+
+export const getMovie = (id?: string): Movie | undefined => moviesList.find(movie => movie.id === id);

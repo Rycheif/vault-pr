@@ -6,7 +6,7 @@ import "../style/movies.css";
 import ReactPaginate from "react-paginate";
 
 export const loader = ({params}: LoaderFunctionArgs) => {
-  return getMovies(params.id);
+  return getMovies();
 };
 
 const MovieList: React.FC<{ itemsPerPage: number }> = ({itemsPerPage}) => {
@@ -56,7 +56,7 @@ const ListItem: React.FC<Movie> = ({id, title, image}) => (
   <Link to={id} className="text-decoration-none">
     <article className="movie-card">
       <figure>
-        <img src={image} alt={title} width="250" height="250"/>
+        <img src={image} alt={title} width="250" height="350"/>
         <figcaption className="text-center pt-2">{title}</figcaption>
       </figure>
     </article>

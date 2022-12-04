@@ -5,7 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Root from "./routes/root";
 import Index from "./routes";
-import MovieList, {loader as movieLoader} from "./routes/movies";
+import MovieList, {loader as movieListLoader} from "./routes/movies";
+import Movie, {loader as movieLoader} from "./routes/movie";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
         {
           path: 'movies',
           element: <MovieList itemsPerPage={3}/>,
+          loader: movieListLoader
+        },
+        {
+          path: 'movies/:movieId',
+          element: <Movie/>,
           loader: movieLoader
         }
       ]
