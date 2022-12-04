@@ -33,9 +33,11 @@ const Index: React.FC = () => {
             title={text.title}
             iconName={text.icon}
             style={
-            {width: 'width: 33%',
+            {
+              width: '33%',
               minWidth: '300px'
-            }}
+            }
+          }
           />)
       }
       </section>
