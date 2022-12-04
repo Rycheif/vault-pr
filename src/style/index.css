@@ -1,13 +1,12 @@
 .hero {
-  padding-top: 150px;
+  padding-top: 50px;
   margin: 4rem;
 }
 
 .grid-wrapper {
   display: flex;
-  gap: 3rem;
+  gap: 1rem;
   flex-wrap: wrap;
-  align-content: space-evenly;
   justify-content: center;
 }
 

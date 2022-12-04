@@ -1,17 +1,18 @@
-import React from 'react';
+import React, {CSSProperties} from 'react';
 import {Icon} from "@iconify/react";
 
 import "../style/TextBoxWithIcon.css"
 
 interface TextBoxWithIconProps {
-  text: string,
+  text: string
   title: string
   iconName: string
+  style?: CSSProperties | undefined
 }
 
-const TextBoxWithIcon: React.FC<TextBoxWithIconProps> = ({text, iconName, title}) => {
+const TextBoxWithIcon: React.FC<TextBoxWithIconProps> = ({text, iconName, title, style}) => {
   return (
-    <div className="box">
+    <div className="box" style={style}>
       <article className="bg-dark">
         <div className="text-center pb-3">
           <Icon icon={iconName} style={{fontSize: '36px', color: "#ef4523"}}/>
