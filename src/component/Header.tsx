@@ -25,8 +25,8 @@ const Header: React.FC = () => (
         <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={Link} to="movies">Database</Nav.Link>
-            <Nav.Link href="#">Popular</Nav.Link>
+            <Nav.Link as={Link} to="movies" className="link">Database</Nav.Link>
+            <Nav.Link href="#" className="link">Popular</Nav.Link>
           </Nav>
           <Form className="d-flex me-auto">
             <Form.Control
@@ -41,8 +41,8 @@ const Header: React.FC = () => (
             >Search</Button>
           </Form>
           <Nav>
-            <Nav.Link href="#">Login</Nav.Link>
-            <Nav.Link href="#">Register</Nav.Link>
+            <Nav.Link href="#" className="link">Login</Nav.Link>
+            <Nav.Link href="#" className="link">Register</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

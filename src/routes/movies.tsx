@@ -4,6 +4,7 @@ import {getMovies, Movie} from "../movies";
 
 import "../style/movies.css";
 import ReactPaginate from "react-paginate";
+import Poster from "../component/Poster";
 
 export const loader = ({params}: LoaderFunctionArgs) => {
   return getMovies();
@@ -26,12 +27,12 @@ const MovieList: React.FC<{ itemsPerPage: number }> = ({itemsPerPage}) => {
     <>
       <div className="list-container d-flex justify-content-evenly gap-5 flex-wrap">
         {
-          currentItems.map((movie: Movie) => <ListItem
-            key={movie.id}
-            id={movie.id}
-            image={movie.image}
-            title={movie.title}
-          />)
+          currentItems.map((movie: Movie) =>
+            <div key={movie.id}>
+              <Link to={movie.id} className="link">
+                <Poster title={movie.title} image={movie.image} />
+              </Link>
+            </div>)
         }
       </div>
         <ReactPaginate

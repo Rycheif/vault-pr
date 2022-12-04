@@ -11,11 +11,15 @@ html, body {
   color: #f8f9fa !important;
 }
 
-a:link, a:visited {
+.link {
+  text-decoration: none;
+}
+
+.link:link, .link:visited {
   color: #db454e;
 }
 
-a:hover {
+.link:hover {
   color: #fff;
 }
 
