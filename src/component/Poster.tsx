@@ -6,7 +6,7 @@ interface PosterProps {
 }
 
 const Poster: React.FC<PosterProps> = ({title, image}) => (
-  <article className="d-flex flex-column align-items-center my-5">
+  <article className="d-flex flex-column align-items-center">
     <h1 className="mb-3">{title}</h1>
     <figure className="poster">
       <img src={image} alt={title} width="250" height="350"/>

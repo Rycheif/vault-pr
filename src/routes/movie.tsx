@@ -15,7 +15,7 @@ const Movie: React.FC = () => {
   return (
     <div className="d-flex flex-column align-items-center my-5">
       <Poster title={movie.title} image={movie.image}/>
-      <TextBoxWithIcon text={movie.content} iconName="fe:comment" title="Description"/>
+      <TextBoxWithIcon text={movie.content} iconName="fe:comment" title="Description" style={{marginTop: "1rem"}}/>
     </div>
   );
 };
