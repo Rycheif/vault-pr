@@ -7,12 +7,15 @@ import Root from "./routes/root";
 import Index from "./routes";
 import MovieList, {loader as movieListLoader} from "./routes/movies";
 import Movie, {loader as movieLoader} from "./routes/movie";
+import NotFound from "./routes/notFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root/>,
+    errorElement: <NotFound/>,
     children: [{
+      errorElement: <NotFound/>,
       children: [
         {
           index: true,

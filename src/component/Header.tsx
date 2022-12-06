@@ -26,7 +26,7 @@ const Header: React.FC = () => (
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="movies" className="link">Database</Nav.Link>
-            <Nav.Link href="#" className="link">Popular</Nav.Link>
+            <Nav.Link as={Link} to="popular" className="link">Popular</Nav.Link>
           </Nav>
           <Form className="d-flex me-auto">
             <Form.Control
@@ -41,8 +41,8 @@ const Header: React.FC = () => (
             >Search</Button>
           </Form>
           <Nav>
-            <Nav.Link href="#" className="link">Login</Nav.Link>
-            <Nav.Link href="#" className="link">Register</Nav.Link>
+            <Nav.Link as={Link} to="login" className="link">Login</Nav.Link>
+            <Nav.Link as={Link} to="register" className="link">Register</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

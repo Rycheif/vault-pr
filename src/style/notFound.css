@@ -1,0 +1,12 @@
+.not-found-element {
+  height: 80vh;
+}
+
+.headline {
+  font-size: 12rem;
+  color: #ef4523;
+}
+
+.error-message {
+  font-size: 2rem;
+}

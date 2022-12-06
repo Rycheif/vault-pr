@@ -21,7 +21,7 @@ const MovieList: React.FC<{ itemsPerPage: number }> = ({itemsPerPage}) => {
   const handleClick = (selectedItem: number) => {
     const newOffset = (selectedItem * itemsPerPage) % movies.length;
     setItemOffset(newOffset);
-  }
+  };
 
   return (
     <>
@@ -52,16 +52,5 @@ const MovieList: React.FC<{ itemsPerPage: number }> = ({itemsPerPage}) => {
     </>
   );
 };
-
-const ListItem: React.FC<Movie> = ({id, title, image}) => (
-  <Link to={id} className="text-decoration-none">
-    <article className="movie-card">
-      <figure>
-        <img src={image} alt={title} width="250" height="350"/>
-        <figcaption className="text-center pt-2">{title}</figcaption>
-      </figure>
-    </article>
-  </Link>
-);
 
 export default MovieList;
