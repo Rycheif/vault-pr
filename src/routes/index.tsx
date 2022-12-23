@@ -1,5 +1,4 @@
 import React from "react";
-import {Icon} from '@iconify/react';
 
 import "../style/index.css"
 import TextBoxWithIcon from "../component/TextBoxWithIcon";

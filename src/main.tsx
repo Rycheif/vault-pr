@@ -8,6 +8,7 @@ import Index from "./routes";
 import MovieList, {loader as movieListLoader} from "./routes/movies";
 import Movie, {loader as movieLoader} from "./routes/movie";
 import ErrorPage from "./routes/error-page";
+import Login, {action as loginAction} from "./routes/login";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
         {
           index: true,
           element: <Index/>
+        },
+        {
+          path: 'signin',
+          element: <Login />,
+          action: loginAction,
         },
         {
           path: 'movies',
