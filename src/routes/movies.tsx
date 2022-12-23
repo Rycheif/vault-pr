@@ -29,7 +29,7 @@ const MovieList: React.FC<{ itemsPerPage: number }> = ({itemsPerPage}) => {
         {
           currentItems.map((movie: Movie) =>
             <div key={movie.id}>
-              <Link to={movie.id} className="link">
+              <Link to={`details/${movie.id}`} className="link">
                 <Poster title={movie.title} image={movie.image} />
               </Link>
             </div>)
