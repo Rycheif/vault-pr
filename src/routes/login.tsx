@@ -2,6 +2,7 @@ import React from 'react';
 import {ActionFunctionArgs, Form, Link, redirect} from "react-router-dom";
 
 import "../style/login.css"
+import Button from "react-bootstrap/Button";
 
 export const action = async ({request, params}: ActionFunctionArgs) => {
   const formData = await request.formData();
@@ -23,9 +24,9 @@ const Login: React.FC = () => (
         <input type="password" name="password" className="form-control" id="passwordInput" placeholder="Password" required={true}/>
       </div>
       <div className="d-flex justify-content-between">
-        <button type="submit" className="custom-btn">Login</button>
+        <Button type="submit" bsPrefix="custom-btn">Login</Button>
         <Link to="/signup">
-          <button type="submit" className="custom-btn">Register</button>
+          <Button bsPrefix="custom-btn">Register</Button>
         </Link>
       </div>
     </Form>
