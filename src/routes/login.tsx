@@ -17,11 +17,11 @@ const Login: React.FC = () => (
     <Form method="post">
       <div className="form-group my-2">
         <label htmlFor="loginInput" className="my-1">Login</label>
-        <input type="text" name="login" className="form-control" id="loginInput" placeholder="Login" required={true}/>
+        <input type="text" name="login" className="form-control" id="loginInput" required={true}/>
       </div>
       <div className="form-group mb-2">
         <label htmlFor="passwordInput" className="my-1">Password</label>
-        <input type="password" name="password" className="form-control" id="passwordInput" placeholder="Password" required={true}/>
+        <input type="password" name="password" className="form-control" id="passwordInput" required={true}/>
       </div>
       <div className="d-flex justify-content-between">
         <Button type="submit" bsPrefix="custom-btn">Login</Button>

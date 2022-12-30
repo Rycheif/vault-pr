@@ -9,6 +9,7 @@ import MovieList, {loader as movieListLoader} from "./routes/movies";
 import Movie, {loader as movieLoader} from "./routes/movie";
 import ErrorPage from "./routes/error-page";
 import Login, {action as loginAction} from "./routes/login";
+import Register, {action as registerAction} from "./routes/register";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
           path: 'signin',
           element: <Login />,
           action: loginAction,
+        },
+        {
+          path: 'signup',
+          element: <Register />,
+          action: registerAction,
         },
         {
           path: 'movies',
