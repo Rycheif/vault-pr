@@ -26,7 +26,7 @@ const Header: React.FC = () => (
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="movies" className="link">Database</Nav.Link>
-            <Nav.Link as={Link} to="popular" className="link">Popular</Nav.Link>
+            <Nav.Link as={Link} to="add" className="link">Add</Nav.Link>
           </Nav>
           <Form className="d-flex me-auto">
             <Form.Control
