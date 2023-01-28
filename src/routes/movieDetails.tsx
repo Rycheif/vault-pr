@@ -4,33 +4,27 @@ import "../style/movie.css"
 import TextBoxWithIcon from "../component/TextBoxWithIcon";
 import Poster from "../component/Poster";
 import axios from "axios";
-import {BASE_URL} from "../rest-config";
+import {BASE_URL} from "../urls";
+import {Movie} from "../types";
 
 export const loader = async ({params}: LoaderFunctionArgs) => {
   try {
-    const {data} = await axios.get<MovieType>(`${BASE_URL}/movies/${params.movieId}`);
+    const {data} = await axios.get<Movie>(`${BASE_URL}/movies/${params.movieId}`);
 
     return data
   } catch (error) {
     if (axios.isAxiosError(error)) {
       console.error('Error message: ', error.message);
-      throw new Response(`Error message: ${error.message}`)
+      throw new Response(`Error message: ${error.message}`, {status: error.response?.status});
     } else {
       console.error('Unexpected error: ', error);
-      throw new Response(`Unexpected message: ${error}`)
+      throw new Response(`Unexpected message: ${error}`);
     }
   }
 };
 
-export interface MovieType {
-  id: string
-  title: string,
-  image: string,
-  content: string,
-}
-
-const Movie: React.FC = () => {
-  const movie = useLoaderData() as MovieType;
+const MovieDetails: React.FC = () => {
+  const movie = useLoaderData() as Movie;
 
   return (
     <div className="d-flex flex-column align-items-center my-5">
@@ -40,4 +34,4 @@ const Movie: React.FC = () => {
   );
 };
 
-export default Movie;
+export default MovieDetails;

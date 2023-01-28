@@ -6,7 +6,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import Root from "./routes/root";
 import Index from "./routes";
 import MovieList, {loader as movieListLoader} from "./routes/movies";
-import Movie, {loader as movieLoader} from "./routes/movie";
+import MovieDetails, {loader as movieLoader} from "./routes/movieDetails";
 import ErrorPage from "./routes/error-page";
 import Login, {action as loginAction} from "./routes/login";
 import Register, {action as registerAction} from "./routes/register";
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'movies/details/:movieId',
-          element: <Movie/>,
+          element: <MovieDetails/>,
           loader: movieLoader
         }
       ]

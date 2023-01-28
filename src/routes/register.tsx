@@ -1,14 +1,42 @@
 import React from 'react';
 import {ActionFunctionArgs, Form, Link, redirect} from "react-router-dom";
 import Button from "react-bootstrap/Button";
+import axios from "axios";
+import {UserRegistrationResponse} from "../types";
+import {BASE_URL, REGISTER} from "../urls";
 
 export const action = async ({request, params}: ActionFunctionArgs) => {
   const formData = await request.formData();
-  const obj = Object.fromEntries(formData);
-  await new Promise((resolve, reject) => setTimeout(() => resolve(obj), 1000));
-  console.log(formData);
+  const registrationData = Object.fromEntries(formData);
+  const response = await register(registrationData);
+  console.log(response);
   return redirect('/signin');
 }
+
+const register = async (registrationPayload: { [p: string]: FormDataEntryValue }) => {
+  try {
+    const {data} = await axios.post<UserRegistrationResponse>(
+      `${BASE_URL}${REGISTER}`,
+      registrationPayload,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+      },
+    );
+
+    return data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      console.error('Error message: ', error.message);
+      throw new Response(`Error message: ${error.message}`, {status: error.response?.status})
+    } else {
+      console.error('Unexpected error: ', error);
+      throw new Response(`Unexpected message: ${error}`);
+    }
+  }
+};
 
 const Register: React.FC = () => (
   <div className="d-flex flex-wrap align-items-center justify-content-center mt-5">
@@ -18,17 +46,15 @@ const Register: React.FC = () => (
         Creating an account will allow you to make updates to the movies in the database and add new one.
         If you already have an account click the button below.
       </p>
-      <Link to="/signin">
-        <Button bsPrefix="custom-btn">Login</Button>
-      </Link>
+      <div className="d-flex justify-content-center">
+        <Link to="/signin">
+          <Button bsPrefix="custom-btn">Login</Button>
+        </Link>
+      </div>
     </section>
     <section className="w-50 mt-5">
       <h2 className="mb-3">Registration Form</h2>
       <Form method="post" className="d-flex flex-column align-items-center">
-        <div className="form-group my-2">
-          <label htmlFor="loginInput" className="my-1">Login</label>
-          <input type="text" name="login" className="form-control" id="loginInput" required={true}/>
-        </div>
         <div className="form-group my-2">
           <label htmlFor="nameInput" className="my-1">Name</label>
           <input type="text" name="name" className="form-control" id="nameInput" required={true}/>

@@ -5,12 +5,12 @@ import "../style/movies.css";
 import ReactPaginate from "react-paginate";
 import Poster from "../component/Poster";
 import axios from "axios";
-import {MovieType} from "./movie";
-import {BASE_URL} from "../rest-config";
+import {BASE_URL} from "../urls";
+import {Movie} from "../types";
 
 export const loader = async ({params}: LoaderFunctionArgs) => {
   try {
-    const {data} = await axios.get<MovieType[]>(`${BASE_URL}/movies`);
+    const {data} = await axios.get<Movie[]>(`${BASE_URL}/movies`);
 
     return data
   } catch (error) {
@@ -26,7 +26,7 @@ export const loader = async ({params}: LoaderFunctionArgs) => {
 
 const MovieList: React.FC<{ itemsPerPage: number }> = ({itemsPerPage}) => {
   const [itemOffset, setItemOffset] = useState(0);
-  const movies = useLoaderData() as MovieType[];
+  const movies = useLoaderData() as Movie[];
 
   const endOffset = itemOffset + itemsPerPage;
   const currentItems = movies.slice(itemOffset, endOffset);
@@ -41,7 +41,7 @@ const MovieList: React.FC<{ itemsPerPage: number }> = ({itemsPerPage}) => {
     <>
       <div className="list-container d-flex justify-content-center gap-5 flex-wrap">
         {
-          currentItems.map((movie: MovieType) =>
+          currentItems.map((movie: Movie) =>
             <div key={movie.id}>
               <Link to={`details/${movie.id}`} className="link">
                 <Poster title={movie.title} image={movie.image}/>
