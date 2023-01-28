@@ -25,17 +25,17 @@ const router = createBrowserRouter([
         },
         {
           path: 'signin',
-          element: <Login />,
+          element: <Login/>,
           action: loginAction,
         },
         {
           path: 'signup',
-          element: <Register />,
+          element: <Register/>,
           action: registerAction,
         },
         {
           path: 'movies',
-          element: <MovieList itemsPerPage={3}/>,
+          element: <MovieList itemsPerPage={10}/>,
           loader: movieListLoader
         },
         {
