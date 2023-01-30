@@ -12,6 +12,7 @@ import Login, {action as loginAction} from "./routes/login";
 import Register, {action as registerAction} from "./routes/register";
 import {UserProvider} from "./context/UserContext";
 import Logout, {action as logoutAction} from "./routes/logout";
+import ProtectedRoute from "./component/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -36,9 +37,14 @@ const router = createBrowserRouter([
           action: registerAction,
         },
         {
-          path: 'logout',
-          element: <Logout/>,
-          action: logoutAction,
+          element: <ProtectedRoute/>,
+          children: [
+            {
+              path: 'logout',
+              element: <Logout/>,
+              action: logoutAction,
+            },
+          ],
         },
         {
           path: 'movies',
