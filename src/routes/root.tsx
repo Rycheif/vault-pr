@@ -2,15 +2,22 @@ import React from 'react';
 import Header from "../component/Header";
 import {Outlet} from "react-router-dom";
 import Footer from "../component/Footer";
+import Container from "react-bootstrap/Container";
 
 const Root: React.FC = () => (
-  <div className="d-flex flex-column justify-content-center min-vh-100" style={{backgroundColor: "#242424"}}>
-    <Header/>
-    <main className="flex-grow-1 flex-shrink-1 justify-content-center" style={{marginTop: "61px"}}>
-      <Outlet/>
-    </main>
-    <Footer/>
-  </div>
+  <Container fluid={true} style={{backgroundColor: "#242424fa"}}>
+    <Container
+      className="min-vh-100 pt-5"
+      style={{backgroundColor: "#242424"}}>
+      <Header/>
+      <main
+        className="container min-vh-100"
+        style={{marginTop: "61px"}}>
+        <Outlet/>
+      </main>
+      <Footer/>
+    </Container>
+  </Container>
 );
 
 export default Root;

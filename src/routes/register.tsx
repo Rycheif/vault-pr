@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 import {UserRegistrationResponse} from "../types";
 import {BASE_URL, REGISTER} from "../urls";
+import Container from "react-bootstrap/Container";
 
 export const action = async ({request, params}: ActionFunctionArgs) => {
   const formData = await request.formData();
@@ -40,8 +41,8 @@ const register = async (registrationPayload: { [p: string]: FormDataEntryValue }
 };
 
 const Register: React.FC = () => (
-  <div className="d-flex flex-wrap align-items-center justify-content-center mt-5">
-    <section className="w-50 mx-2">
+  <Container>
+    <section>
       <h2 className="mb-3">Information</h2>
       <p>
         Creating an account will allow you to make updates to the movies in the database and add new one.
@@ -53,7 +54,7 @@ const Register: React.FC = () => (
         </Link>
       </div>
     </section>
-    <section className="w-50 mt-5">
+    <section className="mt-5">
       <h2 className="mb-3">Registration Form</h2>
       <Form method="post" className="d-flex flex-column align-items-center">
         <div className="form-group my-2">
@@ -88,7 +89,7 @@ const Register: React.FC = () => (
         </div>
       </Form>
     </section>
-  </div>
+  </Container>
 );
 
 export default Register;

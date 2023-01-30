@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import {AUTH_USER, BASE_URL} from "../urls";
 import axios from "axios";
 import {AuthError} from "../types";
+import Container from "react-bootstrap/Container";
 
 export const action = async ({request}: ActionFunctionArgs) => {
   const formData = await request.formData();
@@ -62,12 +63,11 @@ const Login: React.FC = () => {
   const error = useActionData() as AuthError;
 
   return (
-    <div
-      className="login-container d-flex flex-column align-items-center justify-content-center">
-      <span className='text-danger'>
-        {error != undefined && error.status != 200 ? error.message : ''}
-      </span>
+    <Container>
       <Form method="post">
+        <span className='text-danger'>
+          {error != undefined && error.status != 200 ? error.message : ''}
+        </span>
         <div className="form-group my-2">
           <label htmlFor="loginInput" className="my-1">Login</label>
           <input
@@ -86,14 +86,14 @@ const Login: React.FC = () => {
             id="passwordInput"
             required={true}/>
         </div>
-        <div className="d-flex justify-content-between">
+        <div className="d-flex justify-content-center">
           <Button type="submit" bsPrefix="custom-btn">Login</Button>
           <Link to="/signup">
             <Button bsPrefix="custom-btn">Register</Button>
           </Link>
         </div>
       </Form>
-    </div>
+    </Container>
   );
 };
 

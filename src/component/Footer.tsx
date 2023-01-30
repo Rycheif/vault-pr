@@ -1,11 +1,14 @@
 import React from 'react';
 
 import "../style/Footer.css"
+import Container from "react-bootstrap/Container";
 
 const Footer: React.FC = () => (
-  <footer className="footer">
+  <Container>
+    <footer className="footer">
       <p>Copyright © {new Date().getFullYear()} Design: Michał Baka</p>
-  </footer>
+    </footer>
+  </Container>
 );
 
 export default Footer;

@@ -7,6 +7,8 @@ import Poster from "../component/Poster";
 import axios from "axios";
 import {BASE_URL} from "../urls";
 import {Movie} from "../types";
+import Container from "react-bootstrap/Container";
+import {Col, Row} from "react-bootstrap";
 
 export const loader = async ({params}: LoaderFunctionArgs) => {
   try {
@@ -37,18 +39,28 @@ const MovieList: React.FC<{ itemsPerPage: number }> = ({itemsPerPage}) => {
     setItemOffset(newOffset);
   };
 
+  const arrayChunk = (arr: Movie[], n: number) => {
+    const array = arr.slice();
+    const chunks = [];
+    while (array.length) chunks.push(array.splice(0, n));
+    return chunks;
+  };
+
   return (
     <>
-      <div className="list-container d-flex justify-content-center gap-5 flex-wrap">
-        {
-          currentItems.map((movie: Movie) =>
-            <div key={movie.id}>
-              <Link to={`details/${movie.id}`} className="link">
-                <Poster title={movie.title} image={movie.image}/>
-              </Link>
-            </div>)
+      <Container>
+        {arrayChunk(currentItems, 4).map((value, index) => (
+          <Row key={index}>
+            {value.map((movie) =>
+              (<Col key={movie.id}>
+                <Link to={`details/${movie.id}`} className="link">
+                  <Poster title={movie.title} image={movie.image}/>
+                </Link>
+              </Col>))
+            }
+          </Row>))
         }
-      </div>
+      </Container>
       <ReactPaginate
         breakLabel="..."
         nextLabel="next >"
