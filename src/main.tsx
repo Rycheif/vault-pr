@@ -10,6 +10,8 @@ import MovieDetails, {loader as movieLoader} from "./routes/movieDetails";
 import ErrorPage from "./routes/error-page";
 import Login, {action as loginAction} from "./routes/login";
 import Register, {action as registerAction} from "./routes/register";
+import {UserProvider} from "./context/UserContext";
+import Logout, {action as logoutAction} from "./routes/logout";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +36,11 @@ const router = createBrowserRouter([
           action: registerAction,
         },
         {
+          path: 'logout',
+          element: <Logout/>,
+          action: logoutAction,
+        },
+        {
           path: 'movies',
           element: <MovieList itemsPerPage={10}/>,
           loader: movieListLoader
@@ -49,7 +56,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-  <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>
+  <UserProvider>
+    <React.StrictMode>
+      <RouterProvider router={router}/>
+    </React.StrictMode>
+  </UserProvider>
 )

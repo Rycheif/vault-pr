@@ -10,3 +10,14 @@ export interface UserRegistrationResponse {
   password: string,
   id: string,
 }
+
+export interface AuthError {
+  status: number,
+  message: string
+}
+
+export interface User {
+  userId: string
+  name: string,
+  role: string,
+}

@@ -24,21 +24,21 @@ const Index: React.FC = () => {
         </div>
       </section>
       <section className="mt-5 grid-wrapper text-light">
-      {
-        textInBoxes.map((text, index) =>
-          <TextBoxWithIcon
-            key={index}
-            text={text.text}
-            title={text.title}
-            iconName={text.icon}
-            style={
-            {
-              width: '33%',
-              minWidth: '300px'
-            }
-          }
-          />)
-      }
+        {
+          textInBoxes.map((text, index) =>
+            <TextBoxWithIcon
+              key={index}
+              text={text.text}
+              title={text.title}
+              iconName={text.icon}
+              style={
+                {
+                  width: '33%',
+                  minWidth: '300px'
+                }
+              }
+            />)
+        }
       </section>
     </div>
   );

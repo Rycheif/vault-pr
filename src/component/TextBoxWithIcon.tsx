@@ -15,7 +15,7 @@ const TextBoxWithIcon: React.FC<TextBoxWithIconProps> = ({text, iconName, title,
     <div className="box" style={style}>
       <article className="bg-dark">
         <div className="text-center pb-3">
-          <Icon icon={iconName} style={{fontSize: '36px', color: "#ef4523"}}/>
+          <Icon icon={iconName} className="icon"/>
         </div>
         <h2 className="text-center">{title}</h2>
         <p className="px-5">{text}</p>

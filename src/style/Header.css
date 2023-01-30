@@ -19,3 +19,25 @@
   background-color: #EF4523;
   padding: 0.4rem;
 }
+
+.icon {
+  font-size: 3rem;
+  color: #ef4523;
+}
+
+.login-dropdown-item {
+  cursor: pointer;
+}
+
+.login-dropdown-item:active,
+.login-dropdown-item:visited,
+.login-dropdown-item:link,
+.login-dropdown-item:hover {
+  cursor: default;
+  color: #212529;
+  background-color: #fff;
+}
+
+.logout-item:active {
+  background-color: #db454e;
+}
