@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ActionFunctionArgs, Form, json, Link, redirect, useActionData} from "react-router-dom";
 
 import "../style/login.css"
@@ -7,6 +7,8 @@ import {AUTH_USER, BASE_URL} from "../urls";
 import axios from "axios";
 import {AuthError} from "../types";
 import Container from "react-bootstrap/Container";
+import {Simulate} from "react-dom/test-utils";
+import input = Simulate.input;
 
 export const action = async ({request}: ActionFunctionArgs) => {
   const formData = await request.formData();
@@ -60,11 +62,13 @@ const authUser = async (payload: { [p: string]: FormDataEntryValue }) => {
 };
 
 const Login: React.FC = () => {
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
   const error = useActionData() as AuthError;
 
   return (
     <Container>
-      <Form method="post">
+      <Form method="post" className="d-flex flex-column align-items-center">
         <span className='text-danger'>
           {error != undefined && error.status != 200 ? error.message : ''}
         </span>
@@ -75,6 +79,8 @@ const Login: React.FC = () => {
             name="login"
             className="form-control"
             id="loginInput"
+            value={login}
+            onChange={(event) => setLogin(event.target.value)}
             required={true}/>
         </div>
         <div className="form-group mb-2">
@@ -84,12 +90,14 @@ const Login: React.FC = () => {
             name="password"
             className="form-control"
             id="passwordInput"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
             required={true}/>
         </div>
         <div className="d-flex justify-content-center">
-          <Button type="submit" bsPrefix="custom-btn">Login</Button>
+          <Button type="submit" bsPrefix="custom-btn" className="mx-2">Login</Button>
           <Link to="/signup">
-            <Button bsPrefix="custom-btn">Register</Button>
+            <Button bsPrefix="custom-btn" className="mx-2">Register</Button>
           </Link>
         </div>
       </Form>
