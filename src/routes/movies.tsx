@@ -52,7 +52,7 @@ const MovieList: React.FC<{ itemsPerPage: number }> = ({itemsPerPage}) => {
         {arrayChunk(currentItems, 4).map((value, index) => (
           <Row key={index}>
             {value.map((movie) =>
-              (<Col key={movie.id}>
+              (<Col key={movie.id} xl={3} lg={4}>
                 <Link to={`details/${movie.id}`} className="link">
                   <Poster title={movie.title} image={movie.image}/>
                 </Link>

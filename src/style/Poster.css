@@ -1,0 +1,28 @@
+figure {
+  margin: 0;
+}
+
+.poster-image {
+  width: 250px;
+  height: 350px;
+  object-fit: cover;
+}
+
+figcaption {
+  position: absolute;
+  left: -10000px;
+}
+
+.poster {
+  outline: 4px solid #db454e;
+  height: 350px;
+}
+
+.title {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+

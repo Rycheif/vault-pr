@@ -1,6 +1,5 @@
 import React from 'react';
 import {LoaderFunctionArgs, useLoaderData} from "react-router-dom";
-import "../style/movie.css"
 import TextBoxWithIcon from "../component/TextBoxWithIcon";
 import Poster from "../component/Poster";
 import axios from "axios";
