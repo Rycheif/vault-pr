@@ -11,7 +11,7 @@ export interface UserRegistrationResponse {
   id: string,
 }
 
-export interface AuthError {
+export interface RequestError {
   status: number,
   message: string
 }

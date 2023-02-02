@@ -13,6 +13,7 @@ import Register, {action as registerAction} from "./routes/register";
 import {UserProvider} from "./context/UserContext";
 import Logout, {action as logoutAction} from "./routes/logout";
 import ProtectedRoute from "./component/ProtectedRoute";
+import Add, {action as addAction} from "./routes/Add";
 
 const router = createBrowserRouter([
   {
@@ -44,11 +45,16 @@ const router = createBrowserRouter([
               element: <Logout/>,
               action: logoutAction,
             },
+            {
+              path: 'add',
+              element: <Add/>,
+              action: addAction,
+            },
           ],
         },
         {
           path: 'movies',
-          element: <MovieList itemsPerPage={10}/>,
+          element: <MovieList itemsPerPage={12}/>,
           loader: movieListLoader
         },
         {

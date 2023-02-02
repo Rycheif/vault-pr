@@ -33,6 +33,14 @@ export const UserProvider = ({children}: PropsWithChildren) => {
       }
     };
 
+    const token = localStorage.getItem('token');
+    if (null !== token) {
+      const user = decodeToken<User>(token);
+      if (null !== user) {
+        setSignedInUser(user);
+      }
+    }
+
     window.addEventListener('storage', handleLocalStorage);
     loadUser();
 

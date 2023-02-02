@@ -5,7 +5,7 @@ import "../style/login.css"
 import Button from "react-bootstrap/Button";
 import {AUTH_USER, BASE_URL} from "../urls";
 import axios from "axios";
-import {AuthError} from "../types";
+import {RequestError} from "../types";
 import Container from "react-bootstrap/Container";
 import {Simulate} from "react-dom/test-utils";
 import input = Simulate.input;
@@ -25,7 +25,7 @@ export const action = async ({request}: ActionFunctionArgs) => {
     return redirect("/");
   }
 
-  return {status: response.status, message: body} as AuthError;
+  return {status: response.status, message: body} as RequestError;
 }
 
 const authUser = async (payload: { [p: string]: FormDataEntryValue }) => {
@@ -64,7 +64,7 @@ const authUser = async (payload: { [p: string]: FormDataEntryValue }) => {
 const Login: React.FC = () => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
-  const error = useActionData() as AuthError;
+  const error = useActionData() as RequestError;
 
   return (
     <Container>

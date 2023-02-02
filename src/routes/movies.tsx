@@ -5,14 +5,14 @@ import "../style/movies.css";
 import ReactPaginate from "react-paginate";
 import Poster from "../component/Poster";
 import axios from "axios";
-import {BASE_URL} from "../urls";
+import {BASE_URL, MOVIES} from "../urls";
 import {Movie} from "../types";
 import Container from "react-bootstrap/Container";
 import {Col, Row} from "react-bootstrap";
 
 export const loader = async ({params}: LoaderFunctionArgs) => {
   try {
-    const {data} = await axios.get<Movie[]>(`${BASE_URL}/movies`);
+    const {data} = await axios.get<Movie[]>(`${BASE_URL}${MOVIES}`);
 
     return data
   } catch (error) {
