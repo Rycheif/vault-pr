@@ -16,6 +16,7 @@ figcaption {
 .poster {
   outline: 4px solid #db454e;
   height: 350px;
+  position: relative;
 }
 
 .title {
@@ -25,4 +26,23 @@ figcaption {
   justify-content: center;
 }
 
+.delete-icon {
+  font-size: 2.5rem;
+  color: #efefef;
+  transition: margin-top .5s, margin-bottom .5s;
+  -webkit-transition: margin-top .5s, margin-bottom .5s;
+}
 
+.delete-icon:hover {
+  margin-top: -5px;
+}
+
+.icon-container {
+  background-color: #db454e;
+  position: absolute;
+  left: 210px;
+}
+
+.icon-container:hover {
+  cursor: pointer;
+}

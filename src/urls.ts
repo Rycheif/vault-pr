@@ -5,3 +5,5 @@ export const AUTH_USER = "/user/auth"
 export const LOGOUT = "/user/logout/"
 // For POST and GET
 export const MOVIES = "/movies"
+// For GET and DELETE add id at the end
+export const MOVIE = "/movie"

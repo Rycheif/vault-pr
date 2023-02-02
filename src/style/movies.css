@@ -48,3 +48,20 @@
   color: #fff;
   border: 1px solid #fff;
 }
+
+.custom-btn {
+  border: 1px solid #EF4523;
+  border-radius: 5px;
+  color: white;
+  background-color: transparent;
+  padding: 0.4rem;
+  transition: 0.3s;
+}
+
+.custom-btn:hover {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: white;
+  background-color: #EF4523;
+  padding: 0.4rem;
+}

@@ -9,6 +9,7 @@ import {BASE_URL, MOVIES} from "../urls";
 import {Movie} from "../types";
 import Container from "react-bootstrap/Container";
 import {Col, Row} from "react-bootstrap";
+import Button from "react-bootstrap/Button";
 
 export const loader = async ({params}: LoaderFunctionArgs) => {
   try {
@@ -53,28 +54,33 @@ const MovieList: React.FC<{ itemsPerPage: number }> = ({itemsPerPage}) => {
           <Row key={index}>
             {value.map((movie) =>
               (<Col key={movie.id} xl={3} lg={4}>
-                <Link to={`details/${movie.id}`} className="link">
-                  <Poster title={movie.title} image={movie.image}/>
-                </Link>
+                <Poster id={movie.id} title={movie.title} image={movie.image}/>
+                <div className="d-flex justify-content-center">
+                  <Link to={`details/${movie.id}`} className="link">
+                    <Button variant="dark" bsPrefix="custom-btn">Details</Button>
+                  </Link>
+                </div>
               </Col>))
             }
           </Row>))
         }
+        <section className="mt-5">
+          <ReactPaginate
+            breakLabel="..."
+            nextLabel="next >"
+            onPageChange={selectedItem => handleClick(selectedItem.selected)}
+            pageRangeDisplayed={5}
+            pageCount={pageCount}
+            previousLabel="< previous"
+            containerClassName={"pagination"}
+            previousLinkClassName={"pagination-link"}
+            nextLinkClassName={"pagination-link"}
+            disabledClassName={"pagination-link-disabled"}
+            activeClassName={"pagination-link-active"}
+            renderOnZeroPageCount={undefined}
+          />
+        </section>
       </Container>
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel="next >"
-        onPageChange={selectedItem => handleClick(selectedItem.selected)}
-        pageRangeDisplayed={5}
-        pageCount={pageCount}
-        previousLabel="< previous"
-        containerClassName={"pagination"}
-        previousLinkClassName={"pagination-link"}
-        nextLinkClassName={"pagination-link"}
-        disabledClassName={"pagination-link-disabled"}
-        activeClassName={"pagination-link-active"}
-        renderOnZeroPageCount={undefined}
-      />
     </>
   );
 };
