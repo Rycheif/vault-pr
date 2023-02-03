@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import {Form as RouterForm, Link} from 'react-router-dom';
 
 import '../style/Header.css'
@@ -36,15 +35,6 @@ const Header: React.FC = () => {
                 : null
               }
             </Nav>
-            <Form className="d-flex me-auto">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="dark" bsPrefix="custom-btn">Search</Button>
-            </Form>
             {context.user
               ? <Nav>
                 <NavDropdown
